@@ -9,307 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --text-light: #fff;
-        }
+    <link rel="stylesheet" href="css/estilo.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f9f9f9;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        /* Navigation */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Banner Section */
-        .banner {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
-                        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--text-light);
-            text-align: center;
-            padding: 8rem 0 4rem;
-            margin-top: 60px;
-        }
-
-        .banner h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .banner p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: var(--accent-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: #c0392b;
-        }
-
-        /* Main Content */
-        main {
-            padding: 3rem 0;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--secondary-color);
-            font-size: 2rem;
-        }
-
-        /* Cards */
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .card-text {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            padding: 3rem 0;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .footer-section p, .footer-section ul {
-            margin-bottom: 1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section a {
-            color: var(--light-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--secondary-color);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 2rem;
-                transition: left 0.3s;
-            }
-
-            nav ul.show {
-                left: 0;
-            }
-
-            .banner {
-                padding: 6rem 0 3rem;
-            }
-
-            .banner h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -325,11 +26,12 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="primeiro-ano/index.html">1º Ano</a></li>
-                    <li><a href="segundo-ano/">2º Ano</a></li>
-                    <li><a href="terceiro-ano/">3º Ano</a></li>
-                    <li><a href="simulacoes/">Simulações</a></li>
-                    <li><a href="duvidas/">Dúvidas</a></li>
+                    <li><a href="/primeiro-ano/primeiro-ano.html">1º Ano</a></li>
+                    <li><a href="/segundo-ano/segundo-ano.html">2º Ano</a></li>
+                    <li><a href="/terceiro-ano/terceiro-ano.html">3º Ano</a></li>
+                    <li><a href="/primeiro-eja/primeiro-eja.html">1º EJA</a></li>
+                    <li><a href="/segundo-eja/segundo-eja.html">2º EJA</a></li>
+                    <li><a href="/terceiro-eja/terceiro-eja.html">3º EJA</a></li>
                 </ul>
             </nav>
         </div>
@@ -355,7 +57,7 @@
                     <div class="card-content">
                         <h3 class="card-title">1º Ano do Ensino Médio</h3>
                         <p class="card-text">Introdução à Física, Mecânica, Cinemática, Dinâmica, Estática e Hidrostática.</p>
-                        <a href="p./rimeiro-ano/index.html" class="btn">Ver Conteúdo</a>
+                        <a href="/primeiro-ano/primeiro-ano.html" class="btn">Ver Conteúdo</a>
                     </div>
                 </div>
                 
@@ -365,7 +67,7 @@
                     <div class="card-content">
                         <h3 class="card-title">2º Ano do Ensino Médio</h3>
                         <p class="card-text">Termologia, Óptica, Ondulatória e Acústica.</p>
-                        <a href="segundo-ano/indx.html" class="btn">Ver Conteúdo</a>
+                        <a href="/segundo-ano/segundo-ano.html" class="btn">Ver Conteúdo</a>
                     </div>
                 </div>
                 
@@ -375,7 +77,7 @@
                     <div class="card-content">
                         <h3 class="card-title">3º Ano do Ensino Médio</h3>
                         <p class="card-text">Eletrostática, Eletrodinâmica, Eletromagnetismo e Física Moderna.</p>
-                        <a href="terceiro-ano/" class="btn">Ver Conteúdo</a>
+                        <a href="/terceiro-ano/terceiro-ano.html" class="btn">Ver Conteúdo</a>
                     </div>
                 </div>
             </div>
@@ -384,25 +86,39 @@
         <section class="section">
             <h2 class="section-title">Recursos Adicionais</h2>
             <div class="cards-container">
-                <!-- Card Simulações -->
-                <div class="card">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiM5YjU5YjYiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5TaW11bGHDp8O1ZXM8L3RleHQ+PC9zdmc+" alt="Simulações de Física" class="card-img">
-                    <div class="card-content">
-                        <h3 class="card-title">Simulações Interativas</h3>
-                        <p class="card-text">Experimente conceitos físicos através de simulações interativas.</p>
-                        <a href="simulacoes/" class="btn btn-secondary">Explorar Simulações</a>
-                    </div>
-                </div>
+
+
                 
-                <!-- Card Dúvidas -->
+                <!-- Card Física 1º EJA -->
                 <div class="card">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmMzljMTIiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5Dw6lkdWxhczwvdGV4dD48L3N2Zz4=" alt="Área de Dúvidas" class="card-img">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMzNDk4ZGIiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5Gw61zaWNhIDHCuiBFSkE8L3RleHQ+PC9zdmc+" alt="Física 1º EJA" class="card-img">
                     <div class="card-content">
-                        <h3 class="card-title">Área de Dúvidas</h3>
-                        <p class="card-text">Envie suas dúvidas e consulte as perguntas frequentes.</p>
-                        <a href="duvidas/" class="btn btn-secondary">Tirar Dúvidas</a>
+                        <h3 class="card-title">Física 1º EJA</h3>
+                        <p class="card-text">Conteúdos de Física adaptados para Educação de Jovens e Adultos - 1º Ano.</p>
+                        <a href="/primeiro-eja/primeiro-eja.html" class="btn">Ver Conteúdo</a>
                     </div>
                 </div>
+
+                <!-- Card Física 2º EJA (Verde) -->
+                <div class="card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyZWNjNzEiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5Gw61zaWNhIDLCuiBFSkE8L3RleHQ+PC9zdmc+" alt="Física 2º EJA" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Física 2º EJA</h3>
+                        <p class="card-text">Conteúdos de Física adaptados para Educação de Jovens e Adultos - 2º Ano.</p>
+                        <a href="/segundo-eja/segundo-eja.html" class="btn">Ver Conteúdo</a>
+                    </div>
+                </div>
+
+                <!-- Card Física 3º EJA (Vermelho) -->
+                <div class="card">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlNzRjM2MiLz48dGV4dCB4PSIxNTAiIHk9IjEwMCIgZm9udC1mYW1pbHk9Ik1vbnRzZXJyYXQsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjI0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5Gw61zaWNhIDPCuiBFSkE8L3RleHQ+PC9zdmc+" alt="Física 3º EJA" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Física 3º EJA</h3>
+                        <p class="card-text">Conteúdos de Física adaptados para Educação de Jovens e Adultos - 3º Ano.</p>
+                        <a href="/terceiro-eja/terceiro-eja.html" class="btn">Ver Conteúdo</a>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
@@ -418,17 +134,18 @@
                 <div class="footer-section">
                     <h3>Links Rápidos</h3>
                     <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="primeiro-ano/index.html">1º Ano</a></li>
-                        <li><a href="segundo-ano/">2º Ano</a></li>
-                        <li><a href="terceiro-ano/">3º Ano</a></li>
+                        <li><a href="index.html/">Início</a></li>
+                        <li><a href="/primeiro-ano/primeiro-ano.html">1º Ano</a></li>
+                        <li><a href="/segundo-ano/segundo-ano.html">2º Ano</a></li>
+                        <li><a href="/terceiro-ano/terceiro-ano.html">3º Ano</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Recursos</h3>
+                    <h3>Educação Jovens e Adultos</h3>
                     <ul>
-                        <li><a href="simulacoes/">Simulações</a></li>
-                        <li><a href="duvidas/">Dúvidas</a></li>
+                        <li><a href="/primeiro-eja/primeiro-eja.html">1º EJA</a></li>
+                        <li><a href="/segundo-eja/segundo-eja.html">2º EJA</a></li>
+                        <li><a href="/terceiro-eja/terceiro-eja.html">3º EJA</a></li>
                     </ul>
                 </div>
             </div>
